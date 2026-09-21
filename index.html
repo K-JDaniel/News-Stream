@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News Stream</title>
+
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="app-header">
+    <h1 class="app-title">News Stream</h1>
+    <p class="app-subtitle">Your daily digest of the latest headlines</p>
+  </header>
+
+  <!-- ===================== SEARCH SECTION ===================== -->
+  <section class="search-section" aria-label="Search news articles">
+    <input
+      type="text"
+      id="searchInput"
+      class="search-input"
+      placeholder="Search news by keyword..."
+      aria-label="Search news"
+    />
+  </section>
+
+  <!-- ===================== CATEGORY NAVIGATION ===================== -->
+  <nav class="category-nav" id="categoryNav" aria-label="Filter by category">
+    <button class="category-btn active" data-category="general" aria-pressed="true">General</button>
+    <button class="category-btn" data-category="technology" aria-pressed="false">Technology</button>
+    <button class="category-btn" data-category="sports" aria-pressed="false">Sports</button>
+    <button class="category-btn" data-category="business" aria-pressed="false">Business</button>
+    <button class="category-btn" data-category="entertainment" aria-pressed="false">Entertainment</button>
+    <button class="category-btn" data-category="health" aria-pressed="false">Health</button>
+  </nav>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main class="main-content">
+
+    <!-- Status messages: loading / error / empty results -->
+    <!-- These are hidden by default and controlled by JavaScript.
+         role="status"/"alert" help assistive tech announce changes. -->
+    <p id="loadingMessage" class="status-message loading-message" role="status" hidden>
+      Loading news articles...
+    </p>
+
+    <p id="errorMessage" class="status-message error-message" role="alert" hidden>
+      Something went wrong while fetching news.
+    </p>
+
+    <p id="emptyMessage" class="status-message empty-message" role="status" hidden>
+      No articles found. Try a different search or category.
+    </p>
+
+    <!-- Container where JavaScript will dynamically insert news article cards -->
+    <section id="newsContainer" class="news-container" aria-live="polite">
+      <!-- Article cards are generated dynamically by script.js -->
+    </section>
+
+  </main>
+
+  <!-- Link to external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
